@@ -14,11 +14,13 @@ const paquetes = [
     destacado: false,
     custom: false,
     incluye: [
-      'Landing de una página + dominio conectado',
-      'WhatsApp Business (catálogo y respuestas automáticas)',
-      'Instagram optimizado + 10 piezas de contenido',
+      'Sitio web: landing de una página + dominio conectado',
+      'Formulario de contacto directo',
+      'WhatsApp Business: catálogo, respuestas automáticas y horarios',
+      'Instagram: perfil optimizado (bio, destacadas, identidad)',
+      '10 piezas de contenido listas para publicar',
       'Ficha en Google Maps',
-      'Link-in-bio en tu dominio + firma de mail',
+      'Link-in-bio + firma de mail profesional',
     ],
   },
   {
@@ -31,10 +33,11 @@ const paquetes = [
     custom: false,
     incluye: [
       'Todo lo de Arranque, y además:',
-      'Web de varias secciones',
-      'Instagram + 20 piezas / calendario de 30 días',
-      'Reseñas en Google (link + QR)',
-      'Kit de plantillas Canva editables',
+      'Sitio web de varias secciones (inicio, servicios, sobre vos, contacto)',
+      'WhatsApp Business: botón directo en web e Instagram',
+      'Instagram: 20 piezas + calendario de 30 días',
+      'Reseñas en Google con link + QR',
+      'Kit de plantillas Canva editables para seguir solo',
       'Tarjeta digital + QR (vCard)',
       'Correo profesional con tu dominio',
     ],
@@ -48,10 +51,11 @@ const paquetes = [
     custom: false,
     incluye: [
       'Todo lo de Presencia, y además:',
-      'Web completa + blog y SEO básico',
-      '30 días de contenido + guiones de reels',
+      'Sitio web completo + blog y SEO básico',
+      'Instagram: 30 días de contenido + guiones de reels',
       'Medición con Google Analytics',
-      'Sesión de estrategia + 1 mes de ajustes',
+      'Ficha en Google Business optimizada',
+      'Sesión de estrategia 1 a 1 + 1 mes de ajustes',
     ],
   },
   {
@@ -114,7 +118,7 @@ const pasos = [
           <a href={wa} class="btn btn-wa" target="_blank" rel="noopener">Escribinos por WhatsApp</a>
         </div>
         <p class="hero-trust">
-          Detrás de Ábaco: <strong>Germán Rivero</strong>, economista y contador. Marketing que entiende de números y de negocios.
+          Marketing hecho por quien entiende de números y de negocios. Claro, medido y sin vueltas.
         </p>
       </div>
       <div class="hero-art reveal" aria-hidden="true">
@@ -137,8 +141,9 @@ const pasos = [
   <section id="servicios" class="servicios">
     <div class="wrap">
       <div class="section-head reveal">
-        <p class="eyebrow">Qué hacemos</p>
-        <h2>Todo lo que tu negocio necesita para verse serio online.</h2>
+        <p class="eyebrow">Nuestros servicios</p>
+        <h2>Tu presencia online, servicio por servicio.</h2>
+        <p class="lead">Podés arrancar por uno o llevarte todo junto en un paquete.</p>
       </div>
       <div class="cards-4">
         <div class="feat reveal">
@@ -158,7 +163,7 @@ const pasos = [
         </div>
         <div class="feat reveal">
           <div class="feat-ico">⧗</div>
-          <h3>Listo en semanas</h3>
+          <h3>Listo en días</h3>
           <p>Un proyecto con principio y fin. Sin cuotas eternas ni depender de nadie.</p>
         </div>
       </div>
@@ -228,14 +233,15 @@ const pasos = [
   <!-- POR QUE ABACO -->
   <section class="porque">
     <div class="wrap porque-inner reveal">
-      <p class="eyebrow" style="color:#7FE3CE">Por qué Ábaco</p>
+      <p class="eyebrow" style="color:#7FE3CE">Quiénes somos</p>
       <h2>No te vendemos humo. Te ordenamos la presencia.</h2>
       <p>
         Ábaco nace de una idea simple: la mayoría de los profesionales y negocios chicos
         no necesitan una campaña gigante, necesitan verse serios y que los encuentren.
-        Con formación en economía y contaduría, miramos tu presencia digital como lo que es:
-        una inversión con retorno. Claro, medido y sin vueltas.
+        Miramos tu presencia online como lo que es: una inversión con retorno.
+        Claro, medido y sin vueltas.
       </p>
+      <p class="porque-resp">Responsable: <strong>Germán Rivero</strong> — economista y contador.</p>
       <a href={wa} class="btn btn-primary" target="_blank" rel="noopener">Charlemos de tu negocio</a>
     </div>
   </section>
@@ -279,7 +285,7 @@ const pasos = [
       </div>
     </div>
     <div class="wrap footer-bottom">
-      <span>© {new Date().getFullYear()} Ábaco — Germán Rivero</span>
+      <span>© {new Date().getFullYear()} Ábaco · Presencia digital · Uruguay</span>
     </div>
   </footer>
 </Base>
@@ -370,6 +376,8 @@ const pasos = [
   .porque-inner { max-width: 760px; }
   .porque h2 { color: #fff; font-size: 34px; margin: 12px 0 18px; }
   .porque p { font-size: 18px; margin-bottom: 28px; }
+  .porque-resp { font-size: 15px; color: #9FB0C9; margin: -8px 0 28px; }
+  .porque-resp strong { color: #7FE3CE; font-weight: 600; }
 
   /* contacto */
   .contacto { text-align: center; }
