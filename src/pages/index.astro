@@ -1,0 +1,405 @@
+---
+import Base from '../layouts/Base.astro';
+
+const wa = 'https://wa.me/59898521288?text=Hola%20%C3%81baco%2C%20quiero%20mejorar%20la%20presencia%20digital%20de%20mi%20negocio.';
+const waPack = (p) =>
+  `https://wa.me/59898521288?text=Hola%20%C3%81baco%2C%20me%20interesa%20el%20plan%20${encodeURIComponent(p)}.`;
+
+const paquetes = [
+  {
+    nombre: 'Arranque',
+    ideal: 'Para empezar a existir online, ya.',
+    antes: '10.000',
+    precio: '8.000',
+    destacado: false,
+    custom: false,
+    incluye: [
+      'Landing de una página + dominio conectado',
+      'WhatsApp Business (catálogo y respuestas automáticas)',
+      'Instagram optimizado + 10 piezas de contenido',
+      'Ficha en Google Maps',
+      'Link-in-bio en tu dominio + firma de mail',
+    ],
+  },
+  {
+    nombre: 'Presencia',
+    ideal: 'Para verte profesional y ordenado.',
+    antes: '21.000',
+    precio: '17.000',
+    valor: 'Armado por partes: ~$U 30.000',
+    destacado: true,
+    custom: false,
+    incluye: [
+      'Todo lo de Arranque, y además:',
+      'Web de varias secciones',
+      'Instagram + 20 piezas / calendario de 30 días',
+      'Reseñas en Google (link + QR)',
+      'Kit de plantillas Canva editables',
+      'Tarjeta digital + QR (vCard)',
+      'Correo profesional con tu dominio',
+    ],
+  },
+  {
+    nombre: 'Despegue',
+    ideal: 'Para salir con todo y quedar arriba.',
+    antes: '38.000',
+    precio: '30.000',
+    destacado: false,
+    custom: false,
+    incluye: [
+      'Todo lo de Presencia, y además:',
+      'Web completa + blog y SEO básico',
+      '30 días de contenido + guiones de reels',
+      'Medición con Google Analytics',
+      'Sesión de estrategia + 1 mes de ajustes',
+    ],
+  },
+  {
+    nombre: 'A medida',
+    ideal: 'Proyecto grande o varias marcas.',
+    desde: '50.000',
+    destacado: false,
+    custom: true,
+    incluye: [
+      'Alcance y entregables a tu medida',
+      'Ideal para empresas o multi-marca',
+    ],
+  },
+];
+
+const pasos = [
+  { n: '01', t: 'Charlamos', d: 'Una charla corta para entender tu negocio y qué querés lograr.' },
+  { n: '02', t: 'Armamos', d: 'Preparo tu web, tu WhatsApp y tu contenido con tu identidad.' },
+  { n: '03', t: 'Te entrego y te enseño', d: 'Queda todo funcionando y te muestro cómo manejarlo solo.' },
+  { n: '04', t: 'Acompaño (opcional)', d: 'Si querés, mantengo tus redes al día con un plan mensual. Sin ataduras.' },
+];
+---
+
+<Base>
+  <header slot="header" class="site-header">
+    <div class="wrap header-inner">
+      <a href="/" class="brand" aria-label="Ábaco, inicio">
+        <svg width="34" height="34" viewBox="0 0 58 58" aria-hidden="true">
+          <rect x="4" y="6" width="50" height="46" rx="9" fill="none" stroke="#14243F" stroke-width="2.5" />
+          <line x1="10" y1="18" x2="48" y2="18" stroke="#AAB4C2" stroke-width="1.5" />
+          <line x1="10" y1="29" x2="48" y2="29" stroke="#AAB4C2" stroke-width="1.5" />
+          <line x1="10" y1="40" x2="48" y2="40" stroke="#AAB4C2" stroke-width="1.5" />
+          <circle cx="16" cy="18" r="3.6" fill="#12A187" /><circle cx="24" cy="18" r="3.6" fill="#14243F" /><circle cx="43" cy="18" r="3.6" fill="#14243F" />
+          <circle cx="14" cy="29" r="3.6" fill="#14243F" /><circle cx="38" cy="29" r="3.6" fill="#12A187" /><circle cx="46" cy="29" r="3.6" fill="#14243F" />
+          <circle cx="17" cy="40" r="3.6" fill="#14243F" /><circle cx="25" cy="40" r="3.6" fill="#12A187" /><circle cx="42" cy="40" r="3.6" fill="#EF6D45" />
+        </svg>
+        <span class="brand-word">ábaco</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#paquetes">Paquetes</a>
+        <a href="#como">Cómo trabajamos</a>
+      </nav>
+      <a href={wa} class="btn btn-ink header-cta" target="_blank" rel="noopener">Escribinos</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <p class="eyebrow">Presencia digital para profesionales y negocios</p>
+        <h1>Tu negocio, ordenado y online.</h1>
+        <p class="lead">
+          Armamos tu web, tu WhatsApp Business y tus redes en un proyecto claro,
+          con precio cerrado. Empieza y termina: te dejamos todo funcionando y sabiendo usarlo.
+        </p>
+        <div class="hero-cta">
+          <a href="#paquetes" class="btn btn-primary">Ver paquetes</a>
+          <a href={wa} class="btn btn-wa" target="_blank" rel="noopener">Escribinos por WhatsApp</a>
+        </div>
+        <p class="hero-trust">
+          Detrás de Ábaco: <strong>Germán Rivero</strong>, economista y contador. Marketing que entiende de números y de negocios.
+        </p>
+      </div>
+      <div class="hero-art reveal" aria-hidden="true">
+        <div class="hero-card">
+          <svg width="200" height="200" viewBox="0 0 58 58">
+            <rect x="4" y="6" width="50" height="46" rx="9" fill="none" stroke="#EDEFF1" stroke-width="2" />
+            <line x1="10" y1="18" x2="48" y2="18" stroke="#4C607F" stroke-width="1.2" />
+            <line x1="10" y1="29" x2="48" y2="29" stroke="#4C607F" stroke-width="1.2" />
+            <line x1="10" y1="40" x2="48" y2="40" stroke="#4C607F" stroke-width="1.2" />
+            <circle cx="16" cy="18" r="3.6" fill="#12A187" /><circle cx="24" cy="18" r="3.6" fill="#EDEFF1" /><circle cx="43" cy="18" r="3.6" fill="#EDEFF1" />
+            <circle cx="14" cy="29" r="3.6" fill="#EDEFF1" /><circle cx="38" cy="29" r="3.6" fill="#12A187" /><circle cx="46" cy="29" r="3.6" fill="#EDEFF1" />
+            <circle cx="17" cy="40" r="3.6" fill="#EDEFF1" /><circle cx="25" cy="40" r="3.6" fill="#12A187" /><circle cx="42" cy="40" r="3.6" fill="#EF6D45" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="servicios">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Qué hacemos</p>
+        <h2>Todo lo que tu negocio necesita para verse serio online.</h2>
+      </div>
+      <div class="cards-4">
+        <div class="feat reveal">
+          <div class="feat-ico">⬡</div>
+          <h3>Web que convierte</h3>
+          <p>Rápida, clara y pensada para que te contacten. Con tu dominio propio.</p>
+        </div>
+        <div class="feat reveal">
+          <div class="feat-ico">✆</div>
+          <h3>WhatsApp Business</h3>
+          <p>Catálogo, respuestas automáticas y botón directo. Tu canal de ventas ordenado.</p>
+        </div>
+        <div class="feat reveal">
+          <div class="feat-ico">◎</div>
+          <h3>Instagram con contenido</h3>
+          <p>Perfil prolijo y piezas listas para publicar. Arrancás con material, no en blanco.</p>
+        </div>
+        <div class="feat reveal">
+          <div class="feat-ico">⧗</div>
+          <h3>Listo en semanas</h3>
+          <p>Un proyecto con principio y fin. Sin cuotas eternas ni depender de nadie.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAQUETES -->
+  <section id="paquetes" class="paquetes">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Paquetes</p>
+        <h2>Elegí cuánto querés arrancar. Precio cerrado, sin sorpresas.</h2>
+        <p class="lead">Valores en pesos uruguayos. Cada proyecto se ajusta a tu negocio.</p>
+        <p class="promo-pill">Oferta vigente · 20% off por tiempo limitado</p>
+      </div>
+      <div class="cards-3">
+        {paquetes.map((p) => (
+          <div class={`plan reveal${p.destacado ? ' plan-destacado' : ''}${p.custom ? ' plan-custom' : ''}`}>
+            {p.destacado && <span class="plan-badge">Más elegido</span>}
+            <h3>{p.nombre}</h3>
+            <p class="plan-ideal">{p.ideal}</p>
+            {p.custom ? (
+              <p class="plan-precio"><span class="desde">desde</span> $U {p.desde}</p>
+            ) : (
+              <div class="plan-precio-wrap">
+                <p class="plan-antes">$U {p.antes}</p>
+                <p class="plan-precio">$U {p.precio}</p>
+                <p class="plan-promo">Precio promocional</p>
+                {p.valor && <p class="plan-valor">{p.valor}</p>}
+              </div>
+            )}
+            <ul>
+              {p.incluye.map((i) => <li class={i.startsWith('Todo lo de') ? 'li-heading' : ''}>{i}</li>)}
+            </ul>
+            <a href={waPack(p.nombre)} class={`btn ${p.destacado ? 'btn-primary' : 'btn-ghost'} plan-cta`} target="_blank" rel="noopener">{p.custom ? 'Hablemos' : 'Lo quiero'}</a>
+          </div>
+        ))}
+      </div>
+      <p class="paquetes-extra reveal">
+        ¿Ya te conocemos? Sumá una <strong>Recarga</strong> de 30 días más de contenido, o dejá tus redes en piloto automático con el <strong>acompañamiento mensual</strong> opcional.
+      </p>
+      <p class="paquetes-trust reveal">
+        Pago en 2 · Revisiones incluidas · La primera propuesta no se cobra · Tomamos pocos proyectos por mes.
+      </p>
+    </div>
+  </section>
+
+  <!-- COMO TRABAJAMOS -->
+  <section id="como" class="como">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Cómo trabajamos</p>
+        <h2>Simple, claro y con fecha de entrega.</h2>
+      </div>
+      <div class="pasos">
+        {pasos.map((s) => (
+          <div class="paso reveal">
+            <span class="paso-n">{s.n}</span>
+            <h3>{s.t}</h3>
+            <p>{s.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUE ABACO -->
+  <section class="porque">
+    <div class="wrap porque-inner reveal">
+      <p class="eyebrow" style="color:#7FE3CE">Por qué Ábaco</p>
+      <h2>No te vendemos humo. Te ordenamos la presencia.</h2>
+      <p>
+        Ábaco nace de una idea simple: la mayoría de los profesionales y negocios chicos
+        no necesitan una campaña gigante, necesitan verse serios y que los encuentren.
+        Con formación en economía y contaduría, miramos tu presencia digital como lo que es:
+        una inversión con retorno. Claro, medido y sin vueltas.
+      </p>
+      <a href={wa} class="btn btn-primary" target="_blank" rel="noopener">Charlemos de tu negocio</a>
+    </div>
+  </section>
+
+  <!-- VALORES -->
+  <section class="valores">
+    <div class="wrap">
+      <div class="valores-row reveal">
+        <div class="valor"><span class="valor-t">Claro</span><p>Te explicamos todo sin tecnicismos.</p></div>
+        <div class="valor"><span class="valor-t">Sin humo</span><p>Prometemos solo lo que se puede cumplir.</p></div>
+        <div class="valor"><span class="valor-t">Cumplimos</span><p>Fecha de entrega, y se respeta.</p></div>
+        <div class="valor"><span class="valor-t">Precio justo</span><p>Lo que vale, sin vueltas.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="contacto">
+    <div class="wrap contacto-inner reveal">
+      <h2>¿Arrancamos?</h2>
+      <p class="lead">Contanos qué hacés y te decimos por dónde empezar. Sin compromiso.</p>
+      <div class="contacto-cta">
+        <a href={wa} class="btn btn-wa" target="_blank" rel="noopener">Escribinos por WhatsApp</a>
+        <a href="https://instagram.com/abacoestudiogr" class="btn btn-ghost" target="_blank" rel="noopener">@abacoestudiogr</a>
+        <a href="mailto:estudioabaco5@gmail.com" class="btn btn-ghost">Mandanos un mail</a>
+      </div>
+    </div>
+  </section>
+
+  <footer slot="footer" class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <span class="brand-word" style="color:#EDEFF1">ábaco</span>
+        <p>Presencia digital para profesionales y negocios · Uruguay</p>
+      </div>
+      <div class="footer-links">
+        <a href={wa} target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://instagram.com/abacoestudiogr" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:estudioabaco5@gmail.com">Mail</a>
+        <a href="#paquetes">Paquetes</a>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <span>© {new Date().getFullYear()} Ábaco — Germán Rivero</span>
+    </div>
+  </footer>
+</Base>
+
+<style>
+  .site-header {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(255, 255, 255, 0.86);
+    backdrop-filter: saturate(160%) blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .header-inner { display: flex; align-items: center; gap: 24px; height: 66px; }
+  .brand { display: flex; align-items: center; gap: 9px; }
+  .brand-word { font-family: var(--font-title); font-weight: 600; font-size: 22px; color: var(--ink); letter-spacing: -0.02em; }
+  .nav-links { display: flex; gap: 26px; margin-left: auto; }
+  .nav-links a { font-size: 15px; font-weight: 500; color: var(--grafito); }
+  .nav-links a:hover { color: var(--esmeralda-dark); }
+  .header-cta { padding: 10px 18px; font-size: 14px; }
+
+  /* HERO */
+  .hero { padding: 84px 0 96px; background: linear-gradient(180deg, #FBFCFB 0%, #F5F6F4 100%); }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center; }
+  .hero h1 { font-size: 52px; margin: 16px 0 20px; }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin: 30px 0 22px; }
+  .hero-trust { font-size: 15px; color: var(--grafito); max-width: 460px; }
+  .hero-trust strong { color: var(--ink); }
+  .hero-art { display: flex; justify-content: center; }
+  .hero-card {
+    background: var(--ink); border-radius: 28px; padding: 46px;
+    box-shadow: 0 30px 60px -30px rgba(20, 36, 63, 0.55);
+  }
+
+  /* section heads */
+  .section-head { max-width: 720px; margin-bottom: 46px; }
+  .section-head h2 { font-size: 34px; margin-top: 12px; }
+  .section-head .lead { margin-top: 14px; font-size: 17px; }
+
+  /* servicios */
+  .cards-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .feat { background: var(--hueso); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+  .feat:hover { transform: translateY(-4px); box-shadow: 0 18px 34px -22px rgba(20,36,63,.4); border-color: #D4DDE0; }
+  .feat-ico { font-size: 26px; color: var(--esmeralda); line-height: 1; margin-bottom: 14px; }
+  .feat h3 { font-size: 18px; margin-bottom: 8px; }
+  .feat p { font-size: 15px; }
+
+  /* paquetes */
+  .paquetes { background: var(--hueso); }
+  .cards-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(236px, 1fr)); gap: 20px; align-items: start; }
+  .plan { position: relative; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 24px; transition: transform .2s ease, box-shadow .2s ease; }
+  .plan:hover { transform: translateY(-5px); box-shadow: 0 24px 44px -26px rgba(20,36,63,.45); }
+  .plan-destacado { border: 2px solid var(--esmeralda); box-shadow: 0 24px 44px -26px rgba(18,161,135,.45); }
+  .plan-custom { border: 1px dashed var(--niebla); background: var(--hueso); }
+  .plan-badge { position: absolute; top: -13px; left: 24px; background: var(--esmeralda); color: #fff; font-size: 12px; font-weight: 600; padding: 5px 13px; border-radius: 999px; letter-spacing: .02em; }
+  .plan h3 { font-size: 22px; }
+  .plan-ideal { font-size: 14px; color: var(--niebla); margin: 4px 0 16px; min-height: 38px; }
+  .plan-precio-wrap { margin-bottom: 18px; }
+  .plan-precio { font-family: var(--font-title); font-weight: 700; font-size: 30px; color: var(--ink); }
+  .plan-precio .desde { font-family: var(--font-body); font-size: 13px; font-weight: 500; color: var(--niebla); display: block; letter-spacing: .04em; text-transform: uppercase; }
+  .plan-antes { font-size: 15px; color: var(--niebla); text-decoration: line-through; }
+  .plan-precio { margin-top: 2px; }
+  .plan-promo { font-size: 12px; font-weight: 600; color: var(--esmeralda-dark); text-transform: uppercase; letter-spacing: .06em; margin-top: 5px; }
+  .plan-valor { font-size: 13px; color: var(--niebla); margin-top: 8px; }
+  .plan ul { list-style: none; margin-bottom: 24px; display: flex; flex-direction: column; gap: 10px; }
+  .plan li { position: relative; padding-left: 26px; font-size: 15px; }
+  .plan li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--esmeralda); font-weight: 700; }
+  .plan li.li-heading { padding-left: 0; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+  .plan li.li-heading::before { content: none; }
+  .plan-cta { width: 100%; justify-content: center; }
+  .paquetes-extra { text-align: center; margin-top: 34px; font-size: 16px; color: var(--grafito); }
+  .paquetes-extra strong { color: var(--ink); }
+  .paquetes-trust { text-align: center; margin-top: 12px; font-size: 14px; color: var(--niebla); }
+  .promo-pill { display: inline-block; margin-top: 16px; background: #FBE7DF; color: #B23C17; font-size: 13px; font-weight: 600; padding: 7px 15px; border-radius: 999px; }
+
+  /* valores */
+  .valores-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .valor-t { font-family: var(--font-title); font-weight: 600; font-size: 19px; color: var(--ink); display: block; margin-bottom: 5px; }
+  .valor p { font-size: 14px; }
+
+  /* como */
+  .pasos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .paso { padding: 8px 0; }
+  .paso-n { font-family: var(--font-title); font-weight: 700; font-size: 20px; color: var(--esmeralda); }
+  .paso h3 { font-size: 18px; margin: 10px 0 8px; }
+  .paso p { font-size: 15px; }
+
+  /* porque */
+  .porque { background: var(--ink); color: #D7DEE8; }
+  .porque-inner { max-width: 760px; }
+  .porque h2 { color: #fff; font-size: 34px; margin: 12px 0 18px; }
+  .porque p { font-size: 18px; margin-bottom: 28px; }
+
+  /* contacto */
+  .contacto { text-align: center; }
+  .contacto-inner { max-width: 640px; margin: 0 auto; }
+  .contacto h2 { font-size: 38px; }
+  .contacto .lead { margin: 14px auto 28px; }
+  .contacto-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+  /* footer */
+  .site-footer { background: #0F1C31; color: #9FB0C9; padding: 46px 0 30px; }
+  .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; flex-wrap: wrap; }
+  .footer-brand p { font-size: 14px; margin-top: 6px; }
+  .footer-links { display: flex; gap: 22px; }
+  .footer-links a { font-size: 14px; color: #C4D0E0; }
+  .footer-links a:hover { color: #fff; }
+  .footer-bottom { margin-top: 26px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.1); font-size: 13px; }
+
+  @media (max-width: 900px) {
+    .cards-4 { grid-template-columns: repeat(2, 1fr); }
+    .pasos { grid-template-columns: repeat(2, 1fr); }
+    .valores-row { grid-template-columns: repeat(2, 1fr); }
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-art { order: -1; }
+    .hero-card { padding: 34px; }
+  }
+  @media (max-width: 720px) {
+    .hero h1 { font-size: 38px; }
+    .nav-links { display: none; }
+    .section-head h2, .porque h2 { font-size: 27px; }
+    .contacto h2 { font-size: 30px; }
+    .cards-4 { grid-template-columns: 1fr; }
+  }
+</style>

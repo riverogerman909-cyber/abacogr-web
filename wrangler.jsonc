@@ -1,0 +1,9 @@
+{
+  // Configuración para publicar el sitio estático de Ábaco en Cloudflare.
+  "name": "abacogr-web",
+  "compatibility_date": "2024-11-01",
+  // Sirve la carpeta generada por Astro (`npm run build`) como archivos estáticos.
+  "assets": {
+    "directory": "./dist"
+  }
+}

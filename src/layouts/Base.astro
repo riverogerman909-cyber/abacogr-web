@@ -1,0 +1,54 @@
+---
+const {
+  title = 'Ábaco · Presencia digital para profesionales y negocios',
+  description = 'Armamos tu web, tu WhatsApp Business y tus redes en un proyecto claro, con precio cerrado. Presencia digital para profesionales, comercios y pymes de Uruguay.',
+} = Astro.props;
+
+const wa = 'https://wa.me/59898521288?text=Hola%20%C3%81baco%2C%20quiero%20mejorar%20la%20presencia%20digital%20de%20mi%20negocio.';
+
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <slot name="header" />
+    <main>
+      <slot />
+    </main>
+    <slot name="footer" />
+
+    <script is:inline>
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            if (e.isIntersecting) {
+              e.target.classList.add('in');
+              io.unobserve(e.target);
+            }
+          }
+        },
+        { threshold: 0.12 }
+      );
+      const start = () => document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+      if (document.readyState !== 'loading') start();
+      else document.addEventListener('DOMContentLoaded', start);
+    </script>
+  </body>
+</html>
