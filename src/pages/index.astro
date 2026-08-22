@@ -7,45 +7,41 @@ const waPack = (p) =>
 
 const paquetes = [
   {
-    nombre: 'Arranque',
-    ideal: 'Para empezar a existir online, ya.',
-    antes: '10.000',
+    nombre: 'Web',
+    ideal: 'Solo la web: para empezar a existir online.',
     precio: '8.000',
     destacado: false,
     custom: false,
     incluye: [
-      'Sitio web: landing de una página + dominio conectado',
-      'Formulario de contacto directo',
-      'WhatsApp Business: catálogo, respuestas automáticas y horarios',
-      'Instagram: perfil optimizado (bio, destacadas, identidad)',
-      '10 piezas de contenido listas para publicar',
-      'Ficha en Google Maps',
-      'Link-in-bio + firma de mail profesional',
+      'Sitio web de una página, rápido y claro',
+      'Dominio propio + hosting incluidos (sin costo mensual)',
+      'Formulario de contacto y botón de WhatsApp en la web',
+      'Base para aparecer en Google (SEO inicial + alta en el buscador)',
+      'Diseño pensado primero para el celular',
+      'Todo queda a tu nombre',
     ],
   },
   {
     nombre: 'Presencia',
     ideal: 'Para verte profesional y ordenado.',
-    antes: '21.000',
     precio: '17.000',
     valor: 'Armado por partes: ~$U 30.000',
     destacado: true,
     custom: false,
     incluye: [
-      'Todo lo de Arranque, y además:',
+      'Todo lo de Web, y además:',
       'Sitio web de varias secciones (inicio, servicios, sobre vos, contacto)',
-      'WhatsApp Business: botón directo en web e Instagram',
-      'Instagram: 20 piezas + calendario de 30 días',
-      'Reseñas en Google con link + QR',
+      'WhatsApp Business: catálogo, respuestas automáticas y botón directo',
+      'Instagram: perfil optimizado + 20 piezas + calendario de 30 días',
+      'Ficha en Google Maps + reseñas con link y QR',
       'Kit de plantillas Canva editables para seguir solo',
-      'Tarjeta digital + QR (vCard)',
+      'Tarjeta digital + QR (vCard) + firma de mail profesional',
       'Correo profesional con tu dominio',
     ],
   },
   {
     nombre: 'Despegue',
     ideal: 'Para salir con todo y quedar arriba.',
-    antes: '38.000',
     precio: '30.000',
     destacado: false,
     custom: false,
@@ -177,7 +173,6 @@ const pasos = [
         <p class="eyebrow">Paquetes</p>
         <h2>Elegí cuánto querés arrancar. Precio cerrado, sin sorpresas.</h2>
         <p class="lead">Valores en pesos uruguayos. Cada proyecto se ajusta a tu negocio.</p>
-        <p class="promo-pill">Oferta vigente · 20% off por tiempo limitado</p>
       </div>
       <div class="cards-3">
         {paquetes.map((p) => (
@@ -189,9 +184,7 @@ const pasos = [
               <p class="plan-precio"><span class="desde">desde</span> $U {p.desde}</p>
             ) : (
               <div class="plan-precio-wrap">
-                <p class="plan-antes">$U {p.antes}</p>
                 <p class="plan-precio">$U {p.precio}</p>
-                <p class="plan-promo">Precio promocional</p>
                 {p.valor && <p class="plan-valor">{p.valor}</p>}
               </div>
             )}
@@ -344,9 +337,7 @@ const pasos = [
   .plan-precio-wrap { margin-bottom: 18px; }
   .plan-precio { font-family: var(--font-title); font-weight: 700; font-size: 30px; color: var(--ink); }
   .plan-precio .desde { font-family: var(--font-body); font-size: 13px; font-weight: 500; color: var(--niebla); display: block; letter-spacing: .04em; text-transform: uppercase; }
-  .plan-antes { font-size: 15px; color: var(--niebla); text-decoration: line-through; }
   .plan-precio { margin-top: 2px; }
-  .plan-promo { font-size: 12px; font-weight: 600; color: var(--esmeralda-dark); text-transform: uppercase; letter-spacing: .06em; margin-top: 5px; }
   .plan-valor { font-size: 13px; color: var(--niebla); margin-top: 8px; }
   .plan ul { list-style: none; margin-bottom: 24px; display: flex; flex-direction: column; gap: 10px; }
   .plan li { position: relative; padding-left: 26px; font-size: 15px; }
@@ -357,7 +348,6 @@ const pasos = [
   .paquetes-extra { text-align: center; margin-top: 34px; font-size: 16px; color: var(--grafito); }
   .paquetes-extra strong { color: var(--ink); }
   .paquetes-trust { text-align: center; margin-top: 12px; font-size: 14px; color: var(--niebla); }
-  .promo-pill { display: inline-block; margin-top: 16px; background: #FBE7DF; color: #B23C17; font-size: 13px; font-weight: 600; padding: 7px 15px; border-radius: 999px; }
 
   /* valores */
   .valores-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }

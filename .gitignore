@@ -11,3 +11,6 @@ node_modules/
 # logs y sistema
 npm-debug.log*
 .DS_Store
+
+# generadores internos de contenido (no publicar: el repo es publico)
+scripts/
