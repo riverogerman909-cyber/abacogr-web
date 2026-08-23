@@ -43,8 +43,7 @@ const nav = [['#servicios', 'Servicios'], ['#casos', 'Casos'], ['#paquetes', 'Pa
 <style>
   .site-header { position: sticky; top: 0; z-index: 20; background: rgba(245, 246, 244, .92); backdrop-filter: saturate(160%) blur(10px); -webkit-backdrop-filter: saturate(160%) blur(10px); border-bottom: 1px solid transparent; transition: border-color var(--t-fast) ease; }
   .site-header.is-compact { border-bottom-color: var(--line); }
-  .header-inner { display: flex; align-items: center; gap: 24px; height: 66px; transition: height var(--t-fast) ease; }
-  .is-compact .header-inner { height: 56px; }
+  .header-inner { display: flex; align-items: center; gap: 24px; height: 64px; }
   .brand { display: flex; align-items: center; gap: 9px; }
   .brand-word { font-family: var(--font-title); font-weight: 600; font-size: 22px; color: var(--ink); letter-spacing: -.02em; }
   .nav-links { display: flex; gap: 28px; margin-left: auto; }
@@ -71,5 +70,5 @@ const nav = [['#servicios', 'Servicios'], ['#casos', 'Casos'], ['#paquetes', 'Pa
     .header-cta { margin-left: auto; padding: 10px 16px; }
     .menu-btn { display: inline-flex; align-items: center; justify-content: center; }
   }
-  @media (prefers-reduced-motion: reduce) { .menu[open] { animation: none; } .header-inner { transition: none; } }
+  @media (prefers-reduced-motion: reduce) { .menu[open] { animation: none; } }
 </style>

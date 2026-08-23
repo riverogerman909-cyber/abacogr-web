@@ -7,9 +7,9 @@ const wa = 'https://wa.me/59898521288?text=Hola%20%C3%81baco%2C%20quiero%20mejor
 </a>
 
 <style>
-  .wa-float { position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); z-index: 30; display: none; align-items: center; gap: 8px; height: 52px; padding: 0 18px 0 14px; border-radius: var(--pill); background: var(--wa); color: var(--wa-ink); font-weight: 600; font-size: 15px; box-shadow: 0 12px 28px -12px rgba(8, 53, 26, .6); transform: translateY(120%); opacity: 0; transition: transform 250ms var(--ease-out), opacity 250ms; }
+  .wa-float { position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); z-index: 30; display: none; align-items: center; gap: 8px; height: 52px; padding: 0 18px 0 14px; border-radius: var(--pill); background: var(--wa); color: var(--wa-ink); font-weight: 600; font-size: 15px; box-shadow: 0 12px 28px -12px rgba(8, 53, 26, .6); transform: translateY(120%); opacity: 0; visibility: hidden; transition: transform 250ms var(--ease-out), opacity 250ms, visibility 0s 250ms; }
   .wa-float svg { width: 22px; height: 22px; }
-  .wa-float.is-on { transform: none; opacity: 1; }
+  .wa-float.is-on { transform: none; opacity: 1; visibility: visible; transition-delay: 0s; }
   @media (max-width: 899px) { .wa-float { display: inline-flex; } }
   @media (prefers-reduced-motion: reduce) { .wa-float { transition: none; } }
 </style>
