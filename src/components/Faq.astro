@@ -1,0 +1,43 @@
+---
+const faqs = [
+  ['¿Tengo que pagar algo todos los meses?', 'No. El proyecto tiene precio cerrado y se paga en dos partes. El dominio y el hosting van incluidos, y el hosting no tiene costo mensual. El acompañamiento mensual existe, pero es opcional y sin ataduras.'],
+  ['¿De quién quedan la web y el dominio?', 'Tuyos. Todo queda a tu nombre: dominio, web y cuentas. Si mañana querés seguir con otra persona, podés.'],
+  ['¿Cuánto demora?', 'Días, no meses. Al arrancar cerramos una fecha de entrega, y se respeta.'],
+  ['¿Tengo que saber de tecnología?', 'No. Te entrego todo funcionando y te enseño a manejarlo. Si preferís no tocar nada, está el acompañamiento mensual.'],
+  ['¿Y si ya tengo Instagram o WhatsApp?', 'Mejor: no arrancás de cero. Ordenamos lo que ya tenés y lo conectamos con tu web.'],
+];
+---
+<section id="faq" class="faq">
+  <div class="wrap folio">
+    <p class="eyebrow folio-label reveal">06 — Preguntas</p>
+    <div class="folio-body">
+      <div class="section-head reveal">
+        <h2>Lo que siempre nos preguntan<span class="dot">.</span></h2>
+      </div>
+      <div class="faq-lista reveal">
+        {faqs.map(([q, a]) => (
+          <details class="faq-item">
+            <summary><span>{q}</span><span class="faq-plus" aria-hidden="true"></span></summary>
+            <div class="faq-a"><p>{a}</p></div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-lista { border-top: 1px solid var(--line); max-width: 760px; }
+  .faq-item { border-bottom: 1px solid var(--line); }
+  summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; list-style: none; cursor: pointer; padding: 20px 0; font-family: var(--font-title); font-weight: 600; font-size: 20px; color: var(--ink); letter-spacing: -.01em; min-height: 48px; }
+  summary::-webkit-details-marker { display: none; }
+  .faq-plus { position: relative; flex: none; width: 22px; height: 22px; }
+  .faq-plus::before, .faq-plus::after { content: ''; position: absolute; left: 50%; top: 50%; width: 14px; height: 2px; background: var(--esmeralda-dark); transform: translate(-50%, -50%); transition: transform var(--t-fast) var(--ease-out); }
+  .faq-plus::after { transform: translate(-50%, -50%) rotate(90deg); }
+  details[open] .faq-plus::before { transform: translate(-50%, -50%) rotate(45deg); }
+  details[open] .faq-plus::after { transform: translate(-50%, -50%) rotate(-45deg); }
+  .faq-a { padding: 0 0 22px; max-width: 60ch; }
+  details[open] .faq-a { animation: faq-in 250ms var(--ease-out); }
+  @keyframes faq-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { details[open] .faq-a { animation: none; } }
+</style>

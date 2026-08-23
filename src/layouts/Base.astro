@@ -1,12 +1,18 @@
 ---
+import '@fontsource/sora/latin-300.css';
+import '@fontsource/sora/latin-500.css';
+import '@fontsource/sora/latin-600.css';
+import '@fontsource/inter/latin-400.css';
+import '@fontsource/inter/latin-500.css';
+import '@fontsource/inter/latin-600.css';
+import soraUrl from '@fontsource/sora/files/sora-latin-600-normal.woff2?url';
+import interUrl from '@fontsource/inter/files/inter-latin-400-normal.woff2?url';
+import '../styles/global.css';
+
 const {
   title = 'Ábaco · Presencia digital para profesionales y negocios',
-  description = 'Armamos tu web, tu WhatsApp Business y tus redes en un proyecto claro, con precio cerrado. Presencia digital para profesionales, comercios y pymes de Uruguay.',
+  description = 'Armamos tu web, tu WhatsApp Business y tus redes en un proyecto claro, con precio cerrado y todo a tu nombre. Presencia digital para profesionales, comercios y pymes de Uruguay.',
 } = Astro.props;
-
-const wa = 'https://wa.me/59898521288?text=Hola%20%C3%81baco%2C%20quiero%20mejorar%20la%20presencia%20digital%20de%20mi%20negocio.';
-
-import '../styles/global.css';
 ---
 
 <!doctype html>
@@ -17,15 +23,16 @@ import '../styles/global.css';
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href="https://abacogr.com/" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <meta property="og:url" content="https://abacogr.com/" />
+    <meta property="og:locale" content="es_UY" />
+    <meta name="theme-color" content="#F5F6F4" />
+    <script is:inline>document.documentElement.classList.add('js');</script>
+    <link rel="preload" as="font" type="font/woff2" crossorigin href={soraUrl} />
+    <link rel="preload" as="font" type="font/woff2" crossorigin href={interUrl} />
   </head>
   <body>
     <slot name="header" />
@@ -33,22 +40,6 @@ import '../styles/global.css';
       <slot />
     </main>
     <slot name="footer" />
-
-    <script is:inline>
-      const io = new IntersectionObserver(
-        (entries) => {
-          for (const e of entries) {
-            if (e.isIntersecting) {
-              e.target.classList.add('in');
-              io.unobserve(e.target);
-            }
-          }
-        },
-        { threshold: 0.12 }
-      );
-      const start = () => document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
-      if (document.readyState !== 'loading') start();
-      else document.addEventListener('DOMContentLoaded', start);
-    </script>
+    <script src="../scripts/main.js"></script>
   </body>
 </html>

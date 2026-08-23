@@ -1,0 +1,70 @@
+---
+const wa = 'https://wa.me/59898521288?text=Hola%20%C3%81baco%2C%20quiero%20mejorar%20la%20presencia%20digital%20de%20mi%20negocio.';
+const valores = [
+  ['Claro', 'Te explicamos todo sin tecnicismos.'],
+  ['Sin humo', 'Prometemos solo lo que se puede cumplir.'],
+  ['Cumplimos', 'Fecha de entrega, y se respeta.'],
+  ['Precio justo', 'Lo que vale, sin vueltas.'],
+];
+---
+<section id="nosotros" class="nosotros seccion-oscura">
+  <div class="wrap folio">
+    <p class="eyebrow folio-label nos-eyebrow reveal">05 — Quiénes somos</p>
+    <div class="folio-body nos-grid">
+      <div class="nos-texto">
+        <h2 class="reveal">No te vendemos humo<span class="dot">.</span><br />Te ordenamos la presencia<span class="dot">.</span></h2>
+        <p class="reveal" style="--i:1">
+          Ábaco nace de una idea simple: la mayoría de los profesionales y negocios chicos
+          no necesitan una campaña gigante, necesitan verse serios y que los encuentren.
+          Miramos tu presencia online como lo que es: una inversión con retorno.
+          Claro, medido y sin vueltas.
+        </p>
+        <p class="nos-resp reveal" style="--i:2">Responsable: <strong>Germán Rivero</strong> — economista y contador.</p>
+        <a href={wa} class="btn btn-primary reveal" style="--i:3" target="_blank" rel="noopener">Charlemos de tu negocio</a>
+        <ul class="valores reveal" style="--i:4">
+          {valores.map(([t, d]) => (
+            <li><span class="bolita" aria-hidden="true"></span><div><strong>{t}</strong><span>{d}</span></div></li>
+          ))}
+        </ul>
+      </div>
+      <div class="nos-sello reveal" style="--i:2" aria-hidden="true">
+        <svg viewBox="0 0 58 58">
+          <rect x="4" y="6" width="50" height="46" rx="9" fill="none" stroke="#EDEFF1" stroke-width="2" />
+          <line x1="10" y1="18" x2="48" y2="18" stroke="#4C607F" stroke-width="1.2" />
+          <line x1="10" y1="29" x2="48" y2="29" stroke="#4C607F" stroke-width="1.2" />
+          <line x1="10" y1="40" x2="48" y2="40" stroke="#4C607F" stroke-width="1.2" />
+          <circle cx="16" cy="18" r="3.6" fill="#12A187" /><circle cx="24" cy="18" r="3.6" fill="#EDEFF1" /><circle cx="43" cy="18" r="3.6" fill="#EDEFF1" />
+          <circle cx="14" cy="29" r="3.6" fill="#EDEFF1" /><circle cx="38" cy="29" r="3.6" fill="#12A187" /><circle cx="46" cy="29" r="3.6" fill="#EDEFF1" />
+          <circle cx="17" cy="40" r="3.6" fill="#EDEFF1" /><circle cx="25" cy="40" r="3.6" fill="#12A187" /><circle cx="42" cy="40" r="3.6" fill="#EF6D45" />
+        </svg>
+        <span class="nos-sombra"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .nosotros { background: linear-gradient(180deg, #14243F, #0F1C31); color: var(--papel-ink); }
+  .nos-eyebrow { color: #7FE3CE; }
+  .nos-grid { display: grid; gap: 40px; align-items: center; }
+  .nosotros h2 { color: #fff; font-size: clamp(32px, 4.5vw, 60px); max-width: 20ch; }
+  .nos-texto > p { font-size: 19px; margin: 24px 0; max-width: 52ch; }
+  .nos-resp { font-size: 15px; color: #9FB0C9; margin-top: -8px !important; }
+  .nos-resp strong { color: #7FE3CE; font-weight: 600; }
+  .valores { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; margin-top: 40px; border-top: 1px solid var(--line-dark); }
+  .valores li { display: flex; gap: 12px; align-items: flex-start; padding: 18px 0; border-bottom: 1px solid var(--line-dark); }
+  .valores .bolita { width: 10px; height: 10px; margin-top: .5em; }
+  .valores strong { display: block; font-family: var(--font-title); font-weight: 600; font-size: 18px; color: #fff; }
+  .valores span { font-size: 15px; color: #B8C4D6; }
+  .nos-sello { position: relative; display: flex; justify-content: center; }
+  .nos-sello svg { width: 160px; height: 160px; position: relative; z-index: 1; }
+  .nos-sombra { position: absolute; left: 50%; bottom: -6%; width: 60%; height: 14%; transform: translateX(-50%); background: radial-gradient(ellipse at center, rgba(0, 0, 0, .5), transparent 70%); }
+  @media (min-width: 900px) {
+    .nos-grid { grid-template-columns: 7fr 5fr; gap: 56px; }
+    .nos-sello svg { width: 280px; height: 280px; }
+  }
+  @media (max-width: 899px) {
+    .nos-sello { order: -1; }
+    .valores { grid-template-columns: 1fr; }
+  }
+</style>

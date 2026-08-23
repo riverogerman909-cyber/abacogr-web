@@ -1,0 +1,87 @@
+---
+const waPack = (p) => `https://wa.me/59898521288?text=Hola%20%C3%81baco%2C%20me%20interesa%20el%20plan%20${encodeURIComponent(p)}.`;
+const paquetes = [
+  { nombre: 'Web', ideal: 'Solo la web: para empezar a existir online.', precio: '8.000', destacado: false, custom: false,
+    incluye: ['Sitio web de una página, rápido y claro', 'Dominio propio + hosting incluidos (sin costo mensual)', 'Formulario de contacto y botón de WhatsApp en la web', 'Base para aparecer en Google (SEO inicial + alta en el buscador)', 'Diseño pensado primero para el celular', 'Todo queda a tu nombre'] },
+  { nombre: 'Presencia', ideal: 'Para verte profesional y ordenado.', precio: '17.000', valor: 'Armado por partes: ~$U 30.000', destacado: true, custom: false,
+    incluye: ['Todo lo de Web, y además:', 'Sitio web de varias secciones (inicio, servicios, sobre vos, contacto)', 'WhatsApp Business: catálogo, respuestas automáticas y botón directo', 'Instagram: perfil optimizado + 20 piezas + calendario de 30 días', 'Ficha en Google Maps + reseñas con link y QR', 'Kit de plantillas Canva editables para seguir solo', 'Tarjeta digital + QR (vCard) + firma de mail profesional', 'Correo profesional con tu dominio'] },
+  { nombre: 'Despegue', ideal: 'Para salir con todo y quedar arriba.', precio: '30.000', destacado: false, custom: false,
+    incluye: ['Todo lo de Presencia, y además:', 'Sitio web completo + blog y SEO básico', 'Instagram: 30 días de contenido + guiones de reels', 'Medición con Google Analytics', 'Ficha en Google Business optimizada', 'Sesión de estrategia 1 a 1 + 1 mes de ajustes'] },
+  { nombre: 'A medida', ideal: 'Proyecto grande o varias marcas.', desde: '50.000', destacado: false, custom: true,
+    incluye: ['Alcance y entregables a tu medida', 'Ideal para empresas o multi-marca'] },
+];
+---
+<section id="paquetes" class="paquetes">
+  <div class="wrap folio">
+    <p class="eyebrow folio-label reveal">03 — Paquetes</p>
+    <div class="folio-body">
+      <div class="section-head reveal">
+        <h2>Elegí cuánto querés arrancar. Precio cerrado, sin sorpresas<span class="dot">.</span></h2>
+        <p class="lead">Valores en pesos uruguayos. Cada proyecto se ajusta a tu negocio.</p>
+      </div>
+      <div class="tarifario reveal">
+        {paquetes.map((p, i) => (
+          <div class={`plan${p.destacado ? ' plan-destacado' : ''}${p.custom ? ' plan-custom' : ''}`} style={`--i:${i}`}>
+            {p.destacado && <span class="plan-badge">Más elegido</span>}
+            <h3>{p.nombre}</h3>
+            <p class="plan-ideal">{p.ideal}</p>
+            <p class="plan-precio">
+              {p.custom && <span class="desde">desde</span>}
+              <span class="moneda">$U</span>{p.custom ? p.desde : p.precio}
+            </p>
+            {p.valor ? <p class="plan-valor">{p.valor}</p> : <p class="plan-valor plan-valor--vacio" aria-hidden="true">&nbsp;</p>}
+            <ul>
+              {p.incluye.map((it) => <li class={it.startsWith('Todo lo de') ? 'li-heading' : ''}>{it}</li>)}
+            </ul>
+            <a href={waPack(p.nombre)} class={`btn ${p.destacado ? 'btn-primary' : 'btn-ghost'} plan-cta`} target="_blank" rel="noopener" aria-label={p.custom ? 'Hablemos del plan a medida' : `Quiero el plan ${p.nombre}`}>{p.custom ? 'Hablemos' : 'Lo quiero'}</a>
+          </div>
+        ))}
+      </div>
+      <p class="paquetes-extra reveal">¿Ya te conocemos? Sumá una <strong>Recarga</strong> de 30 días más de contenido, o dejá tus redes en piloto automático con el <strong>acompañamiento mensual</strong> opcional.</p>
+      <p class="paquetes-trust reveal">
+        <span>Pago en 2</span><span class="bolita" aria-hidden="true"></span><span>Revisiones incluidas</span><span class="bolita" aria-hidden="true"></span><span>La primera propuesta no se cobra</span><span class="bolita" aria-hidden="true"></span><span>Tomamos pocos proyectos por mes</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .tarifario { display: grid; gap: 20px; }
+  .plan { position: relative; display: grid; grid-template-rows: auto auto auto auto 1fr auto; background: var(--blanco); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 32px 28px; box-shadow: var(--shadow-card); }
+  .plan h3 { font-size: 24px; }
+  .plan-ideal { font-size: 15px; color: var(--grafito-80); margin: 6px 0 18px; min-height: 2.6em; }
+  .plan-precio { font-family: var(--font-title); font-weight: 300; font-size: clamp(40px, 3.6vw, 54px); min-width: 0; line-height: 1; letter-spacing: -.03em; color: var(--ink); font-variant-numeric: tabular-nums; display: flex; align-items: flex-start; gap: 6px; flex-wrap: wrap; }
+  .plan-precio .moneda { font-family: var(--font-body); font-weight: 500; font-size: 14px; letter-spacing: 0; margin-top: 8px; }
+  .plan-precio .desde { flex-basis: 100%; font-family: var(--font-body); font-weight: 600; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--grafito-80); margin-bottom: 4px; }
+  .plan-valor--vacio { text-decoration: none; }
+  .plan-valor { font-size: 13px; color: var(--grafito-80); text-decoration: line-through; text-decoration-color: var(--niebla); margin: 10px 0 0; }
+  .plan ul { list-style: none; margin: 20px 0 28px; display: flex; flex-direction: column; gap: 10px; }
+  .plan li { position: relative; padding-left: 22px; font-size: 15.5px; line-height: 1.45; }
+  .plan li::before { content: ''; position: absolute; left: 0; top: .5em; width: 10px; height: 10px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, rgba(255,255,255,.55), transparent 40%), var(--esmeralda); }
+  .plan li.li-heading { padding-left: 0; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+  .plan li.li-heading::before { content: none; }
+  .plan-cta { width: 100%; align-self: end; }
+  .plan-badge { position: absolute; top: -13px; left: 24px; background: var(--coral); color: var(--ink); font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; padding: 6px 12px; border-radius: var(--pill); }
+  .plan-destacado { background: var(--ink); border-color: var(--ink); color: var(--papel-ink); }
+  .plan-destacado h3, .plan-destacado .plan-precio, .plan-destacado li.li-heading { color: #fff; }
+  .plan-destacado .plan-ideal, .plan-destacado .plan-valor { color: rgba(215, 222, 232, .8); }
+  .plan-destacado li::before { background: radial-gradient(circle at 35% 30%, rgba(255,255,255,.6), transparent 40%), var(--esmeralda); }
+  .plan-custom { border-style: dashed; border-color: var(--niebla); background: transparent; box-shadow: none; }
+  .paquetes-extra { margin-top: 34px; max-width: 60ch; }
+  .paquetes-extra strong { color: var(--ink); }
+  .paquetes-trust { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 16px; font-size: 15px; color: var(--grafito-80); }
+  .paquetes-trust .bolita { width: 7px; height: 7px; }
+
+  @media (min-width: 1024px) {
+    .tarifario { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; background: var(--blanco); border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow-card); overflow: visible; }
+    .plan { border: 0; border-radius: 0; box-shadow: none; background: transparent; padding: 36px 28px; }
+    .plan + .plan { border-left: 1px solid var(--line); }
+    .plan-destacado { background: var(--ink); margin: -4px 0; border-radius: 18px; border-left-color: var(--ink) !important; clip-path: inset(100% 0 0 0); transition: clip-path var(--t-slow) var(--ease-out); }
+    .tarifario.in .plan-destacado { clip-path: inset(0); }
+    .plan-destacado { padding-top: 56px; }
+    .plan-destacado .plan-badge { top: 20px; left: 28px; }
+    .plan-destacado:hover { transform: translateY(-4px); transition: transform var(--t-fast) var(--ease-out), clip-path var(--t-slow) var(--ease-out); }
+    .plan-custom { background: var(--hueso); border-radius: 0 var(--radius-lg) var(--radius-lg) 0; }
+  }
+  @media (prefers-reduced-motion: reduce) { .plan-destacado { clip-path: none !important; transition: none; } }
+</style>

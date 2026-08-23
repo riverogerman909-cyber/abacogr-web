@@ -1,0 +1,17 @@
+---
+const publico = ['Contadores', 'Abogados', 'Escribanos', 'Psicólogos', 'Nutricionistas', 'Odontólogos', 'Comercios', 'Consultorios', 'Estudios'];
+---
+<section class="cinta" aria-label="Para quién trabajamos">
+  <div class="wrap folio">
+    <p class="eyebrow folio-label reveal">Para quién</p>
+    <p class="cinta-lista folio-body reveal" style="--i:1">
+      {publico.map((p, i) => (<>{i > 0 && <span class="bolita" aria-hidden="true"></span>}<span>{p}</span></>))}
+    </p>
+  </div>
+</section>
+
+<style>
+  .cinta { padding: clamp(40px, 5vw, 56px) 0; }
+  .cinta-lista { display: flex; flex-wrap: wrap; align-items: center; gap: .35em .5em; font-family: var(--font-title); font-weight: 500; font-size: clamp(22px, 3vw, 34px); line-height: 1.2; letter-spacing: -.02em; color: rgba(20, 36, 63, .72); }
+  .cinta-lista .bolita { width: .35em; height: .35em; margin: 0 .15em; }
+</style>

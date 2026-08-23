@@ -1,0 +1,43 @@
+---
+const wa = 'https://wa.me/59898521288?text=Hola%20%C3%81baco%2C%20quiero%20mejorar%20la%20presencia%20digital%20de%20mi%20negocio.';
+---
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <svg width="30" height="30" viewBox="0 0 58 58" aria-hidden="true">
+          <rect x="4" y="6" width="50" height="46" rx="9" fill="none" stroke="#EDEFF1" stroke-width="2.5" />
+          <line x1="10" y1="18" x2="48" y2="18" stroke="#4C607F" stroke-width="1.5" /><line x1="10" y1="29" x2="48" y2="29" stroke="#4C607F" stroke-width="1.5" /><line x1="10" y1="40" x2="48" y2="40" stroke="#4C607F" stroke-width="1.5" />
+          <circle cx="16" cy="18" r="3.6" fill="#12A187" /><circle cx="24" cy="18" r="3.6" fill="#EDEFF1" /><circle cx="43" cy="18" r="3.6" fill="#EDEFF1" />
+          <circle cx="14" cy="29" r="3.6" fill="#EDEFF1" /><circle cx="38" cy="29" r="3.6" fill="#12A187" /><circle cx="46" cy="29" r="3.6" fill="#EDEFF1" />
+          <circle cx="17" cy="40" r="3.6" fill="#EDEFF1" /><circle cx="25" cy="40" r="3.6" fill="#12A187" /><circle cx="42" cy="40" r="3.6" fill="#EF6D45" />
+        </svg>
+        <span class="brand-word">ábaco</span>
+      </div>
+      <p>Presencia digital para profesionales y negocios · Uruguay</p>
+    </div>
+    <nav class="footer-links" aria-label="Enlaces">
+      <a href={wa} target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://instagram.com/abacoestudiogr" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:estudioabaco5@gmail.com">Mail</a>
+      <a href="#paquetes">Paquetes</a>
+    </nav>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© {new Date().getFullYear()} Ábaco · Presencia digital · Montevideo, Uruguay</span>
+  </div>
+  <span class="footer-marca" aria-hidden="true">ábaco</span>
+</footer>
+
+<style>
+  .site-footer { position: relative; overflow: hidden; background: var(--ink-800); color: #9FB0C9; padding: 56px 0 30px; }
+  .footer-inner { position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; flex-wrap: wrap; }
+  .footer-logo { display: flex; align-items: center; gap: 9px; }
+  .footer-logo .brand-word { font-family: var(--font-title); font-weight: 600; font-size: 22px; color: #EDEFF1; letter-spacing: -.02em; }
+  .footer-brand p { font-size: 14px; margin-top: 8px; }
+  .footer-links { display: flex; gap: 22px; flex-wrap: wrap; }
+  .footer-links a { font-size: 14px; color: #C4D0E0; min-height: 44px; display: inline-flex; align-items: center; }
+  .footer-links a:hover { color: #fff; }
+  .footer-bottom { position: relative; z-index: 1; margin-top: 26px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, .1); font-size: 13px; }
+  .footer-marca { position: absolute; left: 50%; bottom: -.22em; transform: translateX(-50%); font-family: var(--font-title); font-weight: 600; font-size: 22vw; line-height: .8; letter-spacing: -.04em; color: rgba(237, 239, 241, .07); pointer-events: none; user-select: none; white-space: nowrap; }
+</style>

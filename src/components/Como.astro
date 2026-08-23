@@ -1,0 +1,57 @@
+---
+const pasos = [
+  { n: '01', t: 'Charlamos', d: 'Una charla corta para entender tu negocio y qué querés lograr.', b: 'ink' },
+  { n: '02', t: 'Armamos', d: 'Preparo tu web, tu WhatsApp y tu contenido con tu identidad.', b: 'ink' },
+  { n: '03', t: 'Te entrego y te enseño', d: 'Queda todo funcionando y te muestro cómo manejarlo solo. Todo a tu nombre.', b: 'em' },
+  { n: '04', t: 'Acompaño (opcional)', d: 'Si querés, mantengo tus redes al día con un plan mensual. Sin ataduras.', b: 'hueca' },
+];
+---
+<section id="como" class="como">
+  <div class="wrap folio">
+    <p class="eyebrow folio-label reveal">04 — Cómo trabajamos</p>
+    <div class="folio-body">
+      <div class="section-head reveal">
+        <h2>Simple, claro y con fecha de entrega<span class="dot">.</span></h2>
+      </div>
+      <div class="varilla-wrap reveal">
+        <span class="varilla" aria-hidden="true"></span>
+        <ol class="pasos">
+          {pasos.map((s, i) => (
+            <li class="paso" style={`--i:${i}`}>
+              <span class={`paso-bolita${s.b === 'em' ? ' bolita' : s.b === 'hueca' ? ' bolita bolita--hueca' : ' bolita bolita--ink'}`} aria-hidden="true"></span>
+              <span class="paso-n">{s.n}</span>
+              <h3>{s.t}</h3>
+              <p>{s.d}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .como { background: var(--blanco); }
+  .varilla-wrap { position: relative; }
+  .varilla { position: absolute; background: var(--niebla); }
+  .pasos { list-style: none; display: grid; gap: 32px; }
+  .paso { position: relative; }
+  .paso-bolita { position: absolute; width: 16px; height: 16px; transform: scale(.6); opacity: 0; transition: transform 250ms cubic-bezier(.34, 1.56, .64, 1), opacity 250ms; transition-delay: calc(300ms + var(--i, 0) * 220ms); }
+  .in .paso-bolita { transform: scale(1); opacity: 1; }
+  .paso-n { font-family: var(--font-title); font-weight: 300; font-size: 22px; color: var(--esmeralda); }
+  .paso h3 { font-size: 22px; margin: 8px 0 8px; }
+  .paso p { max-width: 34ch; }
+  /* mobile: varilla vertical a la izquierda */
+  .varilla-wrap { padding-left: 40px; }
+  .varilla { left: 7px; top: 8px; bottom: 8px; width: 2px; transform: scaleY(0); transform-origin: top; transition: transform 1200ms var(--ease-out); }
+  .in .varilla { transform: scaleY(1); }
+  .paso-bolita { left: -40px; top: 6px; }
+  @media (min-width: 900px) {
+    .varilla-wrap { padding-left: 0; padding-top: 44px; }
+    .varilla { left: 0; right: 0; top: 7px; bottom: auto; width: auto; height: 2px; transform: scaleX(0); transform-origin: left; }
+    .in .varilla { transform: scaleX(1); }
+    .pasos { grid-template-columns: repeat(4, 1fr); gap: 28px; }
+    .paso-bolita { left: 0; top: -44px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .varilla, .paso-bolita { transform: none !important; opacity: 1 !important; transition: none; } }
+</style>

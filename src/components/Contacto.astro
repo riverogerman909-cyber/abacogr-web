@@ -1,0 +1,30 @@
+---
+const wa = 'https://wa.me/59898521288?text=Hola%20%C3%81baco%2C%20quiero%20mejorar%20la%20presencia%20digital%20de%20mi%20negocio.';
+---
+<section id="contacto" class="contacto">
+  <div class="wrap contacto-inner">
+    <h2 class="reveal"><span class="subr">¿Arrancamos?</span></h2>
+    <p class="lead reveal" style="--i:1">Contanos qué hacés y te decimos por dónde empezar. Sin compromiso.</p>
+    <div class="contacto-cta reveal" style="--i:2">
+      <a href={wa} class="btn btn-wa btn-grande" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 1.8a8.2 8.2 0 1 1-4.2 15.3l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8zm-3.2 4.3c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 2.4 1 2.9.8 3.4.7.5 0 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3l-2-1c-.3-.1-.5-.2-.7.2l-.9 1.1c-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.5-.9-.8-1.5-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.5v-.5l-.9-2.2c-.2-.5-.5-.5-.7-.5h-.6z"/></svg>
+        Escribinos por WhatsApp
+      </a>
+      <a href="https://instagram.com/abacoestudiogr" class="btn btn-ghost" target="_blank" rel="noopener">@abacoestudiogr</a>
+      <a href="mailto:estudioabaco5@gmail.com" class="btn btn-ghost">Mandanos un mail</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contacto { padding: clamp(96px, 14vw, 180px) 0; text-align: center; }
+  .contacto-inner { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+  .contacto h2 { font-size: clamp(44px, 8vw, 96px); max-width: none; }
+  .subr { position: relative; display: inline-block; }
+  .subr::after { content: ''; position: absolute; left: 2%; right: 2%; bottom: .04em; height: .08em; background: var(--coral); transform: scaleX(0); transform-origin: left; transition: transform var(--t-slow) var(--ease-out) 300ms; z-index: -1; }
+  .in .subr::after { transform: scaleX(1); }
+  .contacto .lead { margin: 22px auto 34px; }
+  .contacto-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn-grande { font-size: 17px; padding: 16px 28px; }
+  @media (prefers-reduced-motion: reduce) { .subr::after { transform: scaleX(1); transition: none; } }
+</style>
