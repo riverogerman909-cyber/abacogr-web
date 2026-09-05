@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content';
+
+const destacados = ['cuanto-cuesta-una-pagina-web-en-uruguay', 'instagram-o-pagina-web', 'dominio-uy-como-registrarlo'];
+const todos = await getCollection('blog');
+const posts = destacados.map((id) => todos.find((p) => p.id === id)).filter(Boolean);
+---
+<section id="guias" class="guias">
+  <div class="wrap folio">
+    <p class="eyebrow folio-label reveal">07 — Guías</p>
+    <div class="folio-body">
+      <div class="section-head reveal">
+        <h2>Aprendé antes de contratar<span class="dot">.</span></h2>
+        <p class="section-sub">Guías claras y sin humo, para que decidas con datos — nos contrates o no.</p>
+      </div>
+      <ul class="guias-lista reveal">
+        {posts.map((post) => (
+          <li>
+            <a href={`/blog/${post.id}/`}>
+              <span class="guia-t">{post.data.title}</span>
+              <span class="guia-flecha" aria-hidden="true">→</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <p class="guias-todas reveal"><a href="/blog/">Ver todas las guías del blog →</a></p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .guias { padding: 72px 0; border-top: 1px solid var(--line); }
+  .section-sub { margin-top: 10px; color: var(--grafito); max-width: 56ch; }
+  .guias-lista { margin-top: 28px; list-style: none; padding: 0; max-width: 760px; }
+  .guias-lista li { border-top: 1px solid var(--line); }
+  .guias-lista li:last-child { border-bottom: 1px solid var(--line); }
+  .guias-lista a { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 0; min-height: 48px; }
+  .guia-t { font-family: var(--font-title); font-weight: 600; font-size: 19px; letter-spacing: -0.01em; color: var(--ink); transition: color var(--t-fast) var(--ease-out); }
+  .guias-lista a:hover .guia-t { color: var(--esmeralda-text); }
+  .guia-flecha { flex: none; color: var(--esmeralda); font-size: 20px; }
+  .guias-todas { margin-top: 22px; }
+  .guias-todas a { font-weight: 600; color: var(--esmeralda-text); }
+</style>

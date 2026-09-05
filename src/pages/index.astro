@@ -9,12 +9,70 @@ import Paquetes from '../components/Paquetes.astro';
 import Como from '../components/Como.astro';
 import Nosotros from '../components/Nosotros.astro';
 import Faq from '../components/Faq.astro';
+import DelBlog from '../components/DelBlog.astro';
 import Contacto from '../components/Contacto.astro';
 import Footer from '../components/Footer.astro';
 import WaFlotante from '../components/WaFlotante.astro';
+import { faqs } from '../data/faqs';
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://abacogr.com/#org',
+      name: 'Ábaco',
+      description: 'Estudio de presencia digital para profesionales, comercios y pymes de Uruguay: páginas web, WhatsApp Business e Instagram, con precios publicados.',
+      url: 'https://abacogr.com/',
+      logo: 'https://abacogr.com/favicon-192.png',
+      image: 'https://abacogr.com/og.png',
+      email: 'estudioabaco5@gmail.com',
+      telephone: '+598 98 521 288',
+      areaServed: { '@type': 'Country', name: 'Uruguay' },
+      sameAs: ['https://instagram.com/abacoestudiogr'],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://abacogr.com/#web',
+      name: 'Ábaco',
+      url: 'https://abacogr.com/',
+      inLanguage: 'es-UY',
+      publisher: { '@id': 'https://abacogr.com/#org' },
+    },
+    {
+      '@type': 'Service',
+      name: 'Presencia digital para profesionales y pymes',
+      serviceType: 'Diseño de páginas web y presencia digital',
+      provider: { '@id': 'https://abacogr.com/#org' },
+      areaServed: { '@type': 'Country', name: 'Uruguay' },
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Paquetes de Ábaco',
+        itemListElement: [
+          { '@type': 'Offer', name: 'Web', price: '8000', priceCurrency: 'UYU', description: 'Web de una página, dominio propio, hosting sin costo mensual, formulario y botón de WhatsApp, alta en Google. Todo a tu nombre.' },
+          { '@type': 'Offer', name: 'Presencia', price: '19500', priceCurrency: 'UYU', description: 'Todo lo de Web + web multisección, WhatsApp Business configurado, Instagram optimizado, 15 días de publicaciones, ficha de Google Maps y más.' },
+          { '@type': 'Offer', name: 'Despegue', price: '30000', priceCurrency: 'UYU', description: 'Todo lo de Presencia + web completa con blog, 30 días de contenido, guiones de reels, Analytics y un mes de ajustes.' },
+          { '@type': 'Offer', name: 'A medida', priceSpecification: { '@type': 'PriceSpecification', minPrice: 50000, priceCurrency: 'UYU' }, description: 'Proyectos con necesidades específicas, cotizados por alcance.' },
+        ],
+      },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(([q, a]) => ({
+        '@type': 'Question',
+        name: q,
+        acceptedAnswer: { '@type': 'Answer', text: a },
+      })),
+    },
+  ],
+});
 ---
 
-<Base>
+<Base
+  title="Ábaco · Páginas web y presencia digital para pymes en Uruguay"
+  description="Tu página web, WhatsApp Business e Instagram funcionando en días, con precios publicados desde $U 8.000 y todo a tu nombre. Para profesionales y pymes de Uruguay."
+>
+  <script type="application/ld+json" set:html={jsonLd} />
   <Header slot="header" />
   <Hero />
   <Cinta />
@@ -24,6 +82,7 @@ import WaFlotante from '../components/WaFlotante.astro';
   <Como />
   <Nosotros />
   <Faq />
+  <DelBlog />
   <Contacto />
   <WaFlotante />
   <Footer slot="footer" />
