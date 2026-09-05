@@ -12,5 +12,5 @@ node_modules/
 npm-debug.log*
 .DS_Store
 
-# generadores internos de contenido (no publicar: el repo es publico)
-scripts/
+# generadores internos de contenido en la RAIZ (no publicar: el repo es publico)
+/scripts/
