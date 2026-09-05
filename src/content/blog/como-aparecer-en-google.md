@@ -1,5 +1,5 @@
 ---
-title: "Cómo aparecer en Google: guía para negocios uruguayos"
+title: "Cómo aparecer en Google: guía para tu negocio"
 description: "Cómo aparecer en Google gratis: creá tu ficha de Google paso a paso, conseguí reseñas y armá una web lista para posicionar. Guía para negocios uruguayos."
 date: 2026-09-05
 keywords: ["cómo aparecer en Google", "ficha de Google", "Google Business Profile", "mi negocio en Google", "SEO local"]

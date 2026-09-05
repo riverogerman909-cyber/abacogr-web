@@ -19,7 +19,7 @@ const jsonLd = JSON.stringify({
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'Organization',
+      '@type': 'ProfessionalService',
       '@id': 'https://abacogr.com/#org',
       name: 'Ábaco',
       description: 'Estudio de presencia digital para profesionales, comercios y pymes de Uruguay: páginas web, WhatsApp Business e Instagram, con precios publicados.',
@@ -27,7 +27,8 @@ const jsonLd = JSON.stringify({
       logo: 'https://abacogr.com/favicon-192.png',
       image: 'https://abacogr.com/og.png',
       email: 'estudioabaco5@gmail.com',
-      telephone: '+598 98 521 288',
+      telephone: '+59898521288',
+      address: { '@type': 'PostalAddress', addressLocality: 'Montevideo', addressCountry: 'UY' },
       areaServed: { '@type': 'Country', name: 'Uruguay' },
       sameAs: ['https://instagram.com/abacoestudiogr'],
     },
@@ -69,8 +70,8 @@ const jsonLd = JSON.stringify({
 ---
 
 <Base
-  title="Ábaco · Páginas web y presencia digital para pymes en Uruguay"
-  description="Tu página web, WhatsApp Business e Instagram funcionando en días, con precios publicados desde $U 8.000 y todo a tu nombre. Para profesionales y pymes de Uruguay."
+  title="Páginas web y presencia digital en Uruguay · Ábaco"
+  description="Tu página web, WhatsApp Business e Instagram funcionando en días, con precios desde $U 8.000 y todo a tu nombre. Para profesionales y pymes de Uruguay."
 >
   <script type="application/ld+json" set:html={jsonLd} />
   <Header slot="header" />

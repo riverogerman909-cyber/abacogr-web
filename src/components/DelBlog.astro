@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 
-const destacados = ['cuanto-cuesta-una-pagina-web-en-uruguay', 'instagram-o-pagina-web', 'dominio-uy-como-registrarlo'];
+const destacados = ['cuanto-cuesta-una-pagina-web-en-uruguay', 'instagram-o-pagina-web', 'dominio-uy-como-registrarlo', 'como-aparecer-en-google', 'whatsapp-business-para-pymes'];
 const todos = await getCollection('blog');
 const posts = destacados.map((id) => todos.find((p) => p.id === id)).filter(Boolean);
 ---

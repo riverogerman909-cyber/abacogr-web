@@ -11,7 +11,7 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
-const fecha = new Intl.DateTimeFormat('es-UY', { day: 'numeric', month: 'long', year: 'numeric' });
+const fecha = new Intl.DateTimeFormat('es-UY', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 const iso = post.data.date.toISOString().slice(0, 10);
 const url = `https://abacogr.com/blog/${post.id}/`;
 
@@ -32,8 +32,9 @@ const jsonLd = JSON.stringify({
       inLanguage: 'es-UY',
       mainEntityOfPage: { '@type': 'WebPage', '@id': url },
       keywords: post.data.keywords.join(', '),
+      image: [`https://abacogr.com/og-blog-${post.id}.png`],
       author: { '@type': 'Organization', name: 'Ábaco', url: 'https://abacogr.com/' },
-      publisher: { '@type': 'Organization', name: 'Ábaco', url: 'https://abacogr.com/' },
+      publisher: { '@type': 'Organization', name: 'Ábaco', url: 'https://abacogr.com/', logo: { '@type': 'ImageObject', url: 'https://abacogr.com/favicon-192.png' } },
     },
     {
       '@type': 'BreadcrumbList',
@@ -46,7 +47,7 @@ const jsonLd = JSON.stringify({
   ],
 });
 ---
-<Base title={`${post.data.title} · Ábaco`} description={post.data.description} ogType="article">
+<Base title={`${post.data.title} · Ábaco`} description={post.data.description} ogType="article" ogImage={`/og-blog-${post.id}.png`}>
   <script type="application/ld+json" set:html={jsonLd} />
   <Header />
   <main id="main">
@@ -58,7 +59,6 @@ const jsonLd = JSON.stringify({
           </nav>
           <time datetime={iso}>{fecha.format(post.data.date)}</time>
           <h1>{post.data.title}</h1>
-          <p class="lede">{post.data.description}</p>
         </header>
         <div class="prose">
           <Content />

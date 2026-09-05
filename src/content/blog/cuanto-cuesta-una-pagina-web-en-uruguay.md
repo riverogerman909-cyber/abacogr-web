@@ -1,5 +1,5 @@
 ---
-title: "¿Cuánto cuesta una página web en Uruguay? Precios 2026"
+title: "¿Cuánto cuesta una página web en Uruguay?"
 description: "¿Cuánto cuesta una página web en Uruguay? Rangos reales del mercado, costos ocultos y nuestros planes publicados desde $U 8.000. Números claros, sin vueltas."
 date: 2026-09-05
 keywords: ["cuánto cuesta una página web en Uruguay", "precio página web Uruguay", "cuánto sale una web"]

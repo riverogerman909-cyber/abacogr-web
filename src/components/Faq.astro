@@ -9,10 +9,10 @@ import { faqs } from '../data/faqs';
         <h2>Lo que siempre nos preguntan<span class="dot">.</span></h2>
       </div>
       <div class="faq-lista reveal">
-        {faqs.map(([q, a]) => (
+        {faqs.map(([q, a, link]) => (
           <details class="faq-item">
             <summary><span>{q}</span><span class="faq-plus" aria-hidden="true"></span></summary>
-            <div class="faq-a"><p>{a}</p></div>
+            <div class="faq-a"><p>{a}{link && <> <a class="faq-link" href={link}>Ver la guía completa →</a></>}</p></div>
           </details>
         ))}
       </div>
@@ -31,6 +31,7 @@ import { faqs } from '../data/faqs';
   details[open] .faq-plus::before { transform: translate(-50%, -50%) rotate(45deg); }
   details[open] .faq-plus::after { transform: translate(-50%, -50%) rotate(-45deg); }
   .faq-a { padding: 0 0 22px; max-width: 60ch; }
+  .faq-link { font-weight: 600; color: var(--esmeralda-text); }
   details[open] .faq-a { animation: faq-in 250ms var(--ease-out); }
   @keyframes faq-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
   @media (prefers-reduced-motion: reduce) { details[open] .faq-a { animation: none; } }

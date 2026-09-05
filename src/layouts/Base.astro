@@ -14,6 +14,7 @@ const {
   description = 'Armamos tu web, tu WhatsApp Business y tus redes en un proyecto claro, con precio cerrado y todo a tu nombre. Presencia digital para profesionales, comercios y pymes de Uruguay.',
   ogType = 'website',
   ogImage = '/og.png',
+  noindex = false,
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, 'https://abacogr.com').href;
 const ogImageAbs = new URL(ogImage, 'https://abacogr.com').href;
@@ -30,6 +31,7 @@ const ogImageAbs = new URL(ogImage, 'https://abacogr.com').href;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    {noindex && <meta name="robots" content="noindex" />}
     <link rel="canonical" href={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />

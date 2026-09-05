@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
-<Base title="Página no encontrada · Ábaco" description="La página que buscás no existe o cambió de lugar. Volvé al inicio o pasá por las guías del blog de Ábaco.">
+<Base noindex={true} title="Página no encontrada · Ábaco" description="La página que buscás no existe o cambió de lugar. Volvé al inicio o pasá por las guías del blog de Ábaco.">
   <Header />
   <main id="main">
     <section class="nf">

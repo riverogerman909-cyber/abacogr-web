@@ -1,5 +1,5 @@
 ---
-title: "Dominio .uy: qué es, cuánto cuesta y cómo registrarlo"
+title: "Dominio .uy: cuánto sale y cómo registrarlo"
 description: "Guía completa del dominio .uy: qué es, cuánto cuesta, cómo registrarlo en nic.com.uy paso a paso y por qué siempre tiene que quedar a tu nombre."
 date: 2026-09-05
 keywords: ["dominio .uy", "registrar dominio Uruguay", "nic.com.uy", "cuánto cuesta un dominio .uy"]
