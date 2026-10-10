@@ -40,7 +40,7 @@ Es la forma más simple de tener un correo con dominio propio sin costo mensual.
 
 Cómo se hace: con [Cloudflare Email Routing](https://developers.cloudflare.com/email-routing/), que no tiene costo si tu dominio usa el DNS de Cloudflare, o con la opción de reenvío que ofrecen algunos registradores (consultá si el tuyo la incluye).
 
-La limitación: recibir es gratis, pero **responder "desde" tunegocio.uy** requiere un paso más. Por defecto, cuando contestás desde Gmail, el cliente ve tu dirección de Gmail. Para que salga con tu dominio hay que configurar el envío: Gmail lo permite en "Enviar como", pero necesita un servidor de salida y algo de configuración. Es factible; no es automático.
+La limitación: recibir es gratis, pero **cuando respondés desde Gmail, el cliente ve tu dirección de Gmail**, no la del dominio. Hasta ahora se podía resolver con la función "Enviar como" de Gmail y un servidor de salida, pero Google [anunció](https://support.google.com/mail/answer/17101213?hl=es-419) que desde enero de 2027 deja de admitirla para direcciones que no están alojadas en Google, y que ya puede limitar las configuraciones nuevas. Si necesitás que las respuestas salgan desde el dominio, la opción es una casilla completa (la opción 2).
 
 Ideal para: quien está arrancando, recibe pocos mails por día y quiere probar antes de pagar.
 
@@ -128,7 +128,7 @@ No. Tu casilla de Gmail o la que uses sigue existiendo con todo su historial. Lo
 
 ### ¿Puedo usar Gmail con mi dominio?
 
-Sí, de dos formas. La que no tiene costo es el reenvío: los mails a `hola@tunegocio.uy` llegan a tu Gmail, y para responder desde el dominio configurás "Enviar como" con un servidor de salida. La paga es Google Workspace, que es Gmail con tu dominio y con el envío ya resuelto; solo hay que cargar los registros en el DNS.
+Sí, de dos formas. La que no tiene costo es el reenvío: los mails a `hola@tunegocio.uy` llegan a tu Gmail, pero respondés desde tu dirección de Gmail (Google deja de admitir "Enviar como" con direcciones externas en enero de 2027). La paga es Google Workspace, que es Gmail con tu dominio y con el envío ya resuelto; solo hay que cargar los registros en el DNS.
 
 ### ¿Cuántas casillas de correo necesita un negocio chico?
 
