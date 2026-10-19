@@ -34,7 +34,7 @@ Una línea prepaga cuesta poco y te resuelve la separación para siempre. Si igu
 
 Todo lo que completás en el perfil es una pregunta que el cliente no necesita hacerte. Se configura desde **Herramientas para la empresa → Perfil de la empresa**:
 
-- **Nombre**: el del negocio, no el tuyo. "Mercería El Hilo" y no "Sandra".
+- **Nombre**: el del negocio, no el tuyo. "Mercería El Hilo" y no "Marta".
 - **Categoría o rubro**: elegí el que más se acerque; ayuda a que el perfil se entienda de un vistazo.
 - **Descripción**: qué hacés, para quién y en qué zona, en una o dos oraciones. Sin eslóganes.
 - **Horario de atención**: el real. Un horario inventado genera mensajes sin respuesta y clientes molestos.

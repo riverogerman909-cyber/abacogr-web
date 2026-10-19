@@ -46,7 +46,7 @@ La persona completa los campos, toca "enviar" y te llega un correo. Pero una web
 
 Pide pocos datos y, al tocar el botón, arma un texto con ellos y abre WhatsApp con la consulta escrita. El mensaje sale recién cuando la persona lo confirma allí.
 
-Un ejemplo es la web que hicimos con este criterio para la [Dra. Sandra Cohen Erman](https://drasandracohen.com), abogada en Montevideo. Su formulario pide nombre, tema (de una lista cerrada, como familia, sucesiones o propiedad horizontal), modalidad preferida (presencial o videollamada) y un mensaje breve opcional. Junto al botón aclara que no hace falta mandar documentos ni datos sensibles por ese medio y enlaza al aviso de privacidad. Más detalles en la guía de [página web para abogados](/blog/pagina-web-para-abogados-uruguay/).
+Un ejemplo es la web que hicimos con este criterio para una abogada de Montevideo. Su formulario pide nombre, tema (de una lista cerrada, como familia, sucesiones o propiedad horizontal), modalidad preferida (presencial o videollamada) y un mensaje breve opcional. Junto al botón aclara que no hace falta mandar documentos ni datos sensibles por ese medio y enlaza al aviso de privacidad. Más detalles en la guía de [página web para abogados](/blog/pagina-web-para-abogados-uruguay/).
 
 **A favor:** cada consulta llega con nombre, tema y modalidad; no hay servicio de envío, ni bots llenándote el correo, ni base de datos en la web que proteger, y elegir el tema de una lista ayuda a que la persona no cuente su caso entero en el primer mensaje.
 

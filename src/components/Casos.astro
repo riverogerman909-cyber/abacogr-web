@@ -1,7 +1,7 @@
 ---
 const casos = [
-  { nombre: 'Dra. Sandra Cohen Erman', url: 'https://drasandracohen.com', dominio: 'drasandracohen.com', tags: ['Cliente', 'Web', 'Profesional'],
-    texto: 'Abogada en Montevideo. Web sobria con su trayectoria, áreas de práctica, matrícula verificable y un formulario que arma la consulta en WhatsApp sin mostrar su número. Entregada en octubre de 2026.', img: 'sandra' },
+  { nombre: 'Abogada en Montevideo', url: '', dominio: 'Caso anónimo', alt: 'una abogada de Montevideo', tags: ['Cliente', 'Web', 'Profesional'],
+    texto: 'Web sobria con su trayectoria, áreas de práctica, matrícula verificable y un formulario que arma la consulta en WhatsApp sin mostrar su número. Entregada en octubre de 2026. Por confidencialidad, no mostramos su nombre.', img: 'abogada' },
   { nombre: 'Algosphere', url: 'https://algosphere.uy', dominio: 'algosphere.uy', tags: ['Cliente', 'Web', 'Identidad'],
     texto: 'Inversión algorítmica. Web con esfera de partículas 3D y gráfico animado. Entregada en agosto de 2026.', img: 'algosphere' },
   { nombre: 'Delta Academia', url: 'https://deltaacademiagr.com', dominio: 'deltaacademiagr.com', tags: ['Proyecto propio', 'Web', 'Identidad'],
@@ -22,17 +22,17 @@ const casos = [
             <div class="mock" data-tilt>
               <div class="browser">
                 <div class="browser-bar"><span></span><span></span><span></span><em>{c.dominio}</em></div>
-                <img src={`/casos/${c.img}-desktop.webp`} alt={`Página web de ${c.nombre}, diseñada por Ábaco`} width="1200" height="750" loading="lazy" decoding="async" />
+                <img src={`/casos/${c.img}-desktop.webp`} alt={`Página web de ${c.alt ?? c.nombre}, diseñada por Ábaco`} width="1200" height="750" loading="lazy" decoding="async" />
               </div>
               <div class="phone">
-                <img src={`/casos/${c.img}-mobile.webp`} alt={`Página web de ${c.nombre} en el celular`} width="600" height="1298" loading="lazy" decoding="async" />
+                <img src={`/casos/${c.img}-mobile.webp`} alt={`Página web de ${c.alt ?? c.nombre} en el celular`} width="600" height="1298" loading="lazy" decoding="async" />
               </div>
             </div>
             <div class="caso-texto">
               <p class="caso-tags">{c.tags.map((t) => <span>{t}</span>)}</p>
               <h3>{c.nombre}</h3>
               <p>{c.texto}</p>
-              <a href={c.url} target="_blank" rel="noopener" class="caso-link">Ver sitio <span aria-hidden="true">↗</span></a>
+              {c.url && <a href={c.url} target="_blank" rel="noopener" class="caso-link">Ver sitio <span aria-hidden="true">↗</span></a>}
             </div>
           </article>
         ))}

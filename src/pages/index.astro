@@ -50,10 +50,10 @@ const jsonLd = JSON.stringify({
         '@type': 'OfferCatalog',
         name: 'Paquetes de Ábaco',
         itemListElement: [
-          { '@type': 'Offer', name: 'Web', price: '8000', priceCurrency: 'UYU', description: 'Web de una página, dominio propio, hosting sin costo mensual, formulario y botón de WhatsApp, alta en Google. Todo a tu nombre.' },
-          { '@type': 'Offer', name: 'Presencia', price: '19500', priceCurrency: 'UYU', description: 'Todo lo de Web + web multisección, WhatsApp Business configurado, Instagram optimizado, 15 días de publicaciones, ficha de Google Maps y más.' },
-          { '@type': 'Offer', name: 'Despegue', price: '30000', priceCurrency: 'UYU', description: 'Todo lo de Presencia + web completa con blog, 30 días de contenido, guiones de reels, Analytics y un mes de ajustes.' },
-          { '@type': 'Offer', name: 'A medida', priceSpecification: { '@type': 'PriceSpecification', minPrice: 50000, priceCurrency: 'UYU' }, description: 'Proyectos con necesidades específicas, cotizados por alcance.' },
+          { '@type': 'Offer', name: 'Web', price: '8000', priceCurrency: 'UYU', priceSpecification: { '@type': 'PriceSpecification', price: 8000, priceCurrency: 'UYU', valueAddedTaxIncluded: false }, description: 'Web de una página, dominio propio, hosting sin costo mensual, formulario y botón de WhatsApp, alta en Google. Todo a tu nombre.' },
+          { '@type': 'Offer', name: 'Presencia', price: '19500', priceCurrency: 'UYU', priceSpecification: { '@type': 'PriceSpecification', price: 19500, priceCurrency: 'UYU', valueAddedTaxIncluded: false }, description: 'Todo lo de Web + web multisección, WhatsApp Business configurado, Instagram optimizado, 15 días de publicaciones, ficha de Google Maps y más.' },
+          { '@type': 'Offer', name: 'Despegue', price: '30000', priceCurrency: 'UYU', priceSpecification: { '@type': 'PriceSpecification', price: 30000, priceCurrency: 'UYU', valueAddedTaxIncluded: false }, description: 'Todo lo de Presencia + web completa con blog, 30 días de contenido, guiones de reels, Analytics y un mes de ajustes.' },
+          { '@type': 'Offer', name: 'A medida', priceSpecification: { '@type': 'PriceSpecification', minPrice: 50000, priceCurrency: 'UYU', valueAddedTaxIncluded: false }, description: 'Proyectos con necesidades específicas, cotizados por alcance.' },
         ],
       },
     },
@@ -71,7 +71,7 @@ const jsonLd = JSON.stringify({
 
 <Base
   title="Páginas web y presencia digital en Uruguay · Ábaco"
-  description="Tu página web, WhatsApp Business e Instagram funcionando en días, con precios desde $U 8.000 y todo a tu nombre. Para profesionales y pymes de Uruguay."
+  description="Tu página web, WhatsApp Business e Instagram funcionando en días, con precios desde $U 8.000 + IVA y todo a tu nombre. Para profesionales y pymes de Uruguay."
 >
   <script type="application/ld+json" set:html={jsonLd} />
   <Header slot="header" />

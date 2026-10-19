@@ -82,11 +82,11 @@ En los proyectos que hacemos, lo resolvemos con un formulario corto que no guard
 
 Cuándo conviene formulario y cuándo botón directo, en [formulario de contacto o WhatsApp](/blog/formulario-de-contacto-o-whatsapp/); cómo armar el enlace con mensaje, en [link de WhatsApp para tu negocio](/blog/link-de-whatsapp-para-tu-negocio/).
 
-## Un ejemplo real: la web de la Dra. Sandra Cohen Erman
+## Un ejemplo real: la web de una abogada de Montevideo
 
-La web de la [Dra. Sandra Cohen Erman](https://drasandracohen.com), abogada en Montevideo, la hicimos con estos criterios. Tiene cuatro bloques: áreas de práctica, trayectoria, cómo trabaja y contacto. Algunas decisiones del sitio:
+La web que hicimos para una abogada de Montevideo sigue estos criterios (no la nombramos por confidencialidad). Tiene cuatro bloques: áreas de práctica, trayectoria, cómo trabaja y contacto. Algunas decisiones del sitio:
 
-- **Matrícula a la vista.** Junto a la trayectoria figura la matrícula n.º 7888, con enlace a la consulta del Poder Judicial.
+- **Matrícula a la vista.** Junto a la trayectoria figura su número de matrícula, con enlace a la consulta del Poder Judicial.
 - **Trayectoria con hechos:** más de 30 años de ejercicio, sin superlativos.
 - **Honorarios explicados.** La consulta tiene costo y se informa al coordinarla; los honorarios, o la forma de calcularlos, se informan antes de empezar.
 - **Formulario que arma la consulta en WhatsApp**, sin mostrar su número y con la aclaración de que no hace falta mandar documentos ni datos sensibles.
